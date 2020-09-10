@@ -47,7 +47,7 @@ class _Page1State extends State<Page1> {
       _password = TextEditingController();
     }
   onlogin(){
-    print("object");
+    print("กำลังล็อคอิน");
     setState(() {
       user = _username.text;
       pass = _password.text;
@@ -59,7 +59,7 @@ class _Page1State extends State<Page1> {
 
   onnavigator(){
     if (user == usertrue && pass ==passtrue){
-      print("ddfdf");
+      print("ล็อคอินสำเร็จ");
       Navigator.push(
        context, 
        MaterialPageRoute(builder: (context)=> AfterLogin()
@@ -81,7 +81,7 @@ class _Page1State extends State<Page1> {
               children: [
                 Container(
                   margin: EdgeInsets.only(bottom: 50.0),
-                  child: Image.asset("assets/Logo.png"),
+                  child: Image.asset("assets/112.png"),
                   width: 200,
                   height: 200,
                 ),
@@ -90,7 +90,7 @@ class _Page1State extends State<Page1> {
                   child: TextFormField(
                     controller: _username,
                     decoration: InputDecoration(
-                      hintText: "Username"
+                      hintText: "ชื่อผู้ใช้งาน"
                     ),
                   )
                   ),
@@ -99,7 +99,7 @@ class _Page1State extends State<Page1> {
                   child: TextFormField(
                     controller: _password,
                     decoration: InputDecoration(
-                      hintText: "Password",
+                      hintText: "รหัสผ่าน",
                 
                     ),
                     obscureText: true,
@@ -117,16 +117,37 @@ class _Page1State extends State<Page1> {
                       width: 200,
                       height: 50,
                       child: Text(
-                        "Login",
+                        "ล็อคอินเพื่อถอนเงิน",
                         style: TextStyle(
-                          fontSize: 30.0,
-                          color: Colors.white
+                          fontSize: 20.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
-                    
                   ),
-                )
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 30.0),
+                  child: FlatButton(
+                    onPressed: (){
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Page3()));
+                    },
+                     child: Container(
+                       color: Colors.blue,
+                       alignment: Alignment.center,
+                       width: 200,
+                       height: 50,
+                       child: Text(
+                         "เช็คยอดเงิน",
+                         style: TextStyle(
+                           fontSize: 20.0,
+                           color: Colors.white,
+                         ),
+                         ),
+                     )
+                      )
+                      )
               ],
             ),
           );
@@ -149,3 +170,21 @@ class AfterLogin extends StatelessWidget {
     );
   }
 }
+
+class Page3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar :AppBar(),
+      body: Container(
+        alignment: Alignment.center,
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.cyan,
+        child: Text("ยังไม่มีเงินซักบาท"),
+      ),
+
+    );
+  }
+}
+
