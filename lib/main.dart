@@ -236,7 +236,7 @@ class _Screen1State extends State<Screen1> {
   final ware2 = 'at2';
   send456(){
     final builder = MqttClientPayloadBuilder();
-    builder.addString('Sum');
+    builder.addString('123');
     client.publishMessage(ware2, MqttQos.exactlyOnce, builder.payload);
     
   }
@@ -244,7 +244,7 @@ class _Screen1State extends State<Screen1> {
     final ware = 'at2';
   send123(){
     final builder = MqttClientPayloadBuilder();
-    builder.addString('Reset');
+    builder.addString('456');
     client.publishMessage(ware, MqttQos.exactlyOnce, builder.payload);
 
   } 
@@ -380,7 +380,7 @@ class _Screen2State extends State<Screen2> {
   final ware2 = 'at2';
   send456(){
     final builder = MqttClientPayloadBuilder();
-    builder.addString('Sum');
+    builder.addString('123');
     client.publishMessage(ware2, MqttQos.exactlyOnce, builder.payload);
     
   }
@@ -388,7 +388,7 @@ class _Screen2State extends State<Screen2> {
     final ware = 'at2';
   send123(){
     final builder = MqttClientPayloadBuilder();
-    builder.addString('Reset');
+    builder.addString('456');
     client.publishMessage(ware, MqttQos.exactlyOnce, builder.payload);
 
   } 
